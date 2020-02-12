@@ -1,6 +1,6 @@
 const people = [
   { name: 'Wes', cool: true, country: 'Canada' },
-  { name: 'Scott', cool: true, country: 'Merica' },
+  { name: 'Jeremy', cool: true, country: 'Merica' },
   { name: 'Snickers', cool: false, country: 'Dog Country' },
 ];
 
@@ -11,20 +11,16 @@ people.forEach((person, index) => {
   //   console.error('Dumb name');
   // }
   // debugger;
-  // console.log(person.name);
-  console.table(people);
-  console.groupCollapsed(`${person.name}`);
+  console.log(person.name);
 });
 
-// Console Methods
 // console.table(people);
-// console.group('Doing some stuff');
-// console.log('Hey Im one');
-// console.warn('watch out!');
-// console.error('hey');
-// console.groupEnd('Doing some stuff');
 
-// Callstack, Stack Trace
+// Console Methods
+
+// Callstack
+
+// Grabbing Elements
 
 // Breakpoints
 
@@ -50,7 +46,7 @@ function doctorize(name) {
 }
 
 function greet(name) {
-  doesntExist(); // Cause an error
+  doesntExist();
   return `Hello ${name}`;
 }
 
@@ -59,13 +55,6 @@ function go() {
   console.log(name);
 }
 
-function bootstrap() {
-  console.log('Starting the app!');
-  go();
-}
-// bootstrap();
-
-// Grabbing Elements
 const button = document.querySelector('.bigger');
 button.addEventListener('click', function(e) {
   const newFontSize =

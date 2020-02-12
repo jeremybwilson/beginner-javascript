@@ -1,0 +1,42 @@
+body {
+  display: flex;
+  justify-content: center;
+}
+
+.container,
+.sub-container {
+  display: flex;
+}
+
+.container {
+  justify-content: space-between;
+  flex-direction: column;
+  width: 80%;
+}
+
+.sub-container {
+  justify-content: space-between;
+  align-items: center;
+  flex-flow: row wrap;
+  margin: 10px;
+}
+
+button {
+  width: auto;
+  max-height: 100px;
+}
+
+h2,
+img {
+  width: 100%;
+}
+
+.photo {
+  width: 250px;
+  height: 250px;
+}
+
+.clear {
+  display: block;
+  clear: both;
+}

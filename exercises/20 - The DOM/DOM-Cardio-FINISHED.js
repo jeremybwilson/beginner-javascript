@@ -36,6 +36,7 @@ const myHTML = `
     <p>Paragraph Two</p>
   </div>
 `;
+
 const ulElement = div.querySelector('ul');
 console.log(ulElement);
 // put this div before the unordered list from above

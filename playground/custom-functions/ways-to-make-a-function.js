@@ -29,11 +29,16 @@ const inchToCM = inches => inches * 2.54;
 //     name: `${first} ${last}`,
 //     age: 0
 //   }
-//   return baby;
+//   return baby;  // always your return your baby folks
 // }
 
 const makeABaby = (first, last) => ({ name: `${first} ${last}`, age: 0 });
 
+// Anon Function
+// function(age) {
+//   console.log('Running an Anon function');
+//   return `You are cool and age ${age}`;
+// }
 
 // IIFE
 // Immediately Invoked Function Expression
@@ -43,20 +48,20 @@ const makeABaby = (first, last) => ({ name: `${first} ${last}`, age: 0 });
 })(10);
 
 // Methods!!!
-const wes = {
-  name: 'Westopher Bos',
+const jeremy = {
+  name: 'Geronimo Wilson',
   // Method!
   sayHi: function() {
     console.log(`Hey ${this.name}`);
-    return 'Hey Wes';
+    return 'Hey Jeremy';
   },
   // Short hand Method
   yellHi() {
-    console.log('HEY WESSSSS');
+    console.log('HEY YOU GUYYYS!');
   },
   // Arrow function
-  wisperHi: () => {
-    console.log('hii wesss im a mouse');
+  whisperHi: () => {
+    console.log('hii jeremy, imma mouse');
   }
 }
 
@@ -64,15 +69,21 @@ const wes = {
 // Click Callback
 const button = document.querySelector('.clickMe');
 
+let count = 0;
 function handleClick() {
-  console.log('Great Clicking!!');
+  // console.log('Great Clicking!!');
+  console.log('You clicked the button!!');
+  button.value = count;
+  count++;
+  console.log('The count is now', count);
 }
 
-button.addEventListener('click', function() {
-  console.log('NIce Job!!!');
+button.addEventListener('click', handleClick);
+button.addEventListener('click', function(){
+  console.log('Nice Job!!!');
 });
 
 // Timer Callback
 setTimeout(() => {
   console.log('DONE! Time to eat!');
-}, 1000);
+}, 1500);

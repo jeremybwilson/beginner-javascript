@@ -9,19 +9,32 @@
 </head>
 
 <body>
-  <script src="./DOM-Cardio.js"></script>
+  <script src="./DOM-Cardio-WORKING.js"></script>
 
   <style>
+    body {
+      margin: 0 auto;
+    }
+
+    label {
+      display: none;
+    }
+
     .cards {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      grid-gap: 20px;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      // display: grid;
+      // grid-template-columns: repeat(4, 1fr);
+      // grid-gap: 20px;
       padding: 20px;
+      width: auto;
     }
 
     .playerCard {
       background: white;
       padding: 20px;
+      margin: 10px;
     }
 
     .playerCard h2 {

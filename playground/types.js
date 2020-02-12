@@ -1,11 +1,12 @@
 /* eslint-disable */
-/*
-const name = 'wes';
-const middle = "topher";
-const last = `bos`;
 
-const sentence = "shes's so \"cool\"";
-const sentence2 = `shes's so "cool"`;
+/* 
+const name = 'jeremy';
+const middle = "brady";
+const last = `wilson`;
+
+const sentence = 'shes\'s so \"cool\"';
+const sentence2 = `shes's so "cool"`;  // ES6 backticks
 
 const song = `Ohhh
 
@@ -13,32 +14,37 @@ ya
 
 I like
 pizza`;
+*/
+/*
+const hello = 'Hello World.  My name is ' + name.toUpperCase() + ". Nice to meet you";
 
-const hello = 'hello my name is ' + name + ". Nice to meet you";
-
-let hello2 = 'hello my name is ';
-hello2 = hello2 + name;
+let hello2 = 'Hello World.  My name is ';
+hello2 = hello2 + name.toUpperCase();
 hello2 = hello2 + ' Nice to meet you';
 
-const hello = `hello my name is ${name}. Nice to meet you. I am ${1 + 100} years old`;
+const hello3 = `Hello World.  My name is ${name}. Nice to meet you. I am ${1 + 100} years old`;
 
 const html = `
   <div>
     <h2>${name}</h2>
-    <p>${hello}</p>
+    <p>${hello3}</p>
   </div>
 `;
 
 document.body.innerHTML = html;
 
 */
-
-// const age = 100.5;
-// const name = 'wes';
-
-// const a = 10;
-// const b = 20;
 /*
+* Numbers
+*/
+
+/*
+const age = 100.5;
+const name = 'wes';
+
+const a = 10;
+const b = 20;
+
 const smarties = 20;
 const kids = 3;
 const eachKidGets = Math.floor(smarties / kids);
@@ -48,19 +54,16 @@ console.log(`Each kids gets ${eachKidGets}`);
 const price = 1034;
 */
 
-
 /*
 const person = {
-  first: 'wes',
-  last: 'bos',
+  first: 'jeremy',
+  last: 'wilson',
   age: 100
 };
-
 
 let dog;
 console.log(dog);
 dog = 'snickers';
-
 
 let somethingUndefined;
 const somethingNull = null;
@@ -76,8 +79,8 @@ const teller = {
 
 teller.first = 'Teller';
 teller.last = null;
-
 */
+
 
 let isDrawing = false;
 let age = 18;
