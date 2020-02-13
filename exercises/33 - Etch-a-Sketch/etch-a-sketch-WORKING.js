@@ -2,7 +2,7 @@
 const canvas = document.querySelector('#etch-a-sketch');
 const ctx = canvas.getContext('2d');
 const shakebutton = document.querySelector('.shake');
-const MOVE_AMOUNT = 50;
+const MOVE_AMOUNT = 25;
 // Set up our canvas for drawing
 // make a variable called height and width from the same properties on our canvas.
 const { width, height } = canvas;
@@ -27,7 +27,10 @@ function draw({ key }) {
   // increment the hue
   hue += 1;
   // console.log(hue);
-  ctx.strokeStyle = `hsl(${Math.random() * 360}, 100%, 50%)`;
+  // this value combined with the above hue += 1 increment provides a far smoother color transition.
+  ctx.strokeStyle = `hsl(${hue}, 100%, 50%)`;
+  // this strokeStyle value using Math.random() generates a far more jarring color transition as the line is drawn
+  // ctx.strokeStyle = `hsl(${Math.random() * 360}, 100%, 50%)`;
   console.log(key);
   // start the path
   ctx.beginPath();
