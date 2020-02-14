@@ -10,8 +10,20 @@
 
 
 <body>
-  <img width="200" src="./turtle.png" alt="Turt" class="turt">
+  <style>
+    .turtle {
+      position: relative;
+      --x: 10px;
+      --y: 10px;
+      --rotateX: 0;
+      --rotate: 0;
+      transform: translateX(var(--x)) translateY(var(--y)) rotateY(var(--rotateX)) rotate(var(--rotate));
+      transition: transform 0.2s;
+    }
+  </style>
+  <img width="200" src="./turtle.png" alt="Turt" class="turtle">
 
+  <script src="./switch-statements.js"></script>
 </body>
 
 </html>

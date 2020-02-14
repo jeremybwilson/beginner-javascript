@@ -10,7 +10,7 @@ const clickButtonCount = () => {
   console.log(`Count is: ${count}`);
 };
 
-// Function Definition
+// Function definition
 function calculateBill(billAmount, taxRate = 0.13, tipRate = 0.15) {
   clickButtonCount();
 
@@ -20,12 +20,20 @@ function calculateBill(billAmount, taxRate = 0.13, tipRate = 0.15) {
   return total;
 }
 
-button.addEventListener('click', calculateBill);
+const calculateBill2 = (billAmount, taxRate = 0.13, tipRate = 0.15) => {
+  clickButtonCount();
 
-// Function Call. Or **Run**
+  // this is the function body
+  console.log('Running Calculate Bill!!');
+  const total = billAmount + billAmount * taxRate + billAmount * tipRate;
+  return total;
+};
+button.addEventListener('click', calculateBill2);
+
+// Function call. Or **Run**
 const jeremyTotal = 500;
 const jeremyTaxRate = 0.3;
-const myTotal = calculateBill(jeremyTotal, jeremyTaxRate);
+const myTotal = calculateBill2(jeremyTotal, jeremyTaxRate);
 
 // Function Definition
 function sayHiTo(firstName) {
@@ -43,6 +51,6 @@ function yell(name = 'Silly Goose') {
   return `HEY ${name.toUpperCase()}`;
 }
 
-// const myBill = calculateBill(100, undefined, 0.2);
+const myBill = calculateBill(100, undefined, 0.2);
 
 // console.log(myBill);
