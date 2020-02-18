@@ -1,5 +1,3 @@
-// const button = document.querySelector('#buttonClick');
-
 const button = document.querySelector('#buttonClick');
 let count = 0;
 
@@ -40,8 +38,8 @@ function sayHiTo(firstName) {
   return `Hello ${firstName}`;
 }
 
-// const greeting = sayHiTo('Jeremy');
-// console.log(greeting);
+const greeting = sayHiTo('Jeremy');
+console.log(greeting);
 
 function doctorize(name) {
   return `Dr. ${name}`;

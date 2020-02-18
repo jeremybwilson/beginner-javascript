@@ -1,9 +1,8 @@
 /* eslint-disable */
-
-/* 
-const name = 'jeremy';
+/*
+const name = "Jeremy";
 const middle = "brady";
-const last = `wilson`;
+const last = `Wilson`;
 
 const sentence = 'shes\'s so \"cool\"';
 const sentence2 = `shes's so "cool"`;  // ES6 backticks
@@ -14,7 +13,7 @@ ya
 
 I like
 pizza`;
-*/
+ */
 /*
 const hello = 'Hello World.  My name is ' + name.toUpperCase() + ". Nice to meet you";
 
@@ -81,7 +80,7 @@ teller.first = 'Teller';
 teller.last = null;
 */
 
-
+/*
 let isDrawing = false;
 let age = 18;
 const ofAge = age > 19;
@@ -89,3 +88,4 @@ console.log(ofAge);
 
 age = 100;
 let age2 = 100;
+*/
