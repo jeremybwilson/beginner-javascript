@@ -1,6 +1,6 @@
-// function doctorize(firstName) {
-//   return `Dr. ${firstName}`;
-// }
+function doctorize(firstName) {
+  return `Dr. ${firstName.toUpperCase()}`;
+}
 
 // Anon Function
 // function (firstName) {
@@ -8,31 +8,37 @@
 // }
 
 // Function Expression
-// const doctorize = function(firstName) {
-//   return `Dr. ${firstName}`;
+// const doctorize2 = function(firstName) {
+//   return `Dr. ${firstName.toUpperCase()}`;
 // };
+//
+console.log(doctorize('jeremy'));
+// console.log(doctorize2('jeremy'));
 
 /* eslint-disable */
-const inchToCM = inches => inches * 2.54;
+const inchesToCM = inches => inches * 2.54;
 
-// function add(a, b = 3) {
-//   const total = a + b;
-//   return total;
-// }
+const inchesToCM2 = inches => inches * 2.54;
 
-// const add = (a, b = 3) => a + b;
+function add(a, b = 3) {
+  const total = a + b;
+  return total;
+}
+
+const add2 = (a, b = 3) => a + b;
 
 // returning an object
 
-// function makeABaby(first, last) {
-//   const baby = {
-//     name: `${first} ${last}`,
-//     age: 0
-//   }
-//   return baby;  // always your return your baby folks
-// }
+function makeABaby(first, last) {
+  const baby = {
+    name: `${first} ${last}`,
+    age: 0,
+  };
+  return baby; // always your return your baby folks
+};
 
-const makeABaby = (first, last) => ({ name: `${first} ${last}`, age: 0 });
+// fat arrow function version of the above makeABaby function declaration
+const makeABaby2 = (first, last) => ({ name: `${first} ${last}`, age: 0 });
 
 // Anon Function
 // function(age) {
@@ -51,7 +57,7 @@ const makeABaby = (first, last) => ({ name: `${first} ${last}`, age: 0 });
 const jeremy = {
   name: 'Geronimo Wilson',
   // Method!
-  sayHi: function() {
+  sayHi() {
     console.log(`Hey ${this.name}`);
     return 'Hey Jeremy';
   },
@@ -62,28 +68,33 @@ const jeremy = {
   // Arrow function
   whisperHi: () => {
     console.log('hii jeremy, imma mouse');
-  }
-}
+  },
+};
 
 // Callback Functions
 // Click Callback
 const button = document.querySelector('.clickMe');
 
+// let count;
 let count = 0;
+// let countObject = {};
 function handleClick() {
   // console.log('Great Clicking!!');
   console.log('You clicked the button!!');
   button.value = count;
-  count++;
-  console.log('The count is now', count);
+  const countObject = {
+    count: count++,
+  };
+  // count++;
+  console.log('The count object contains', countObject);
 }
 
 button.addEventListener('click', handleClick);
-button.addEventListener('click', function(){
+button.addEventListener('click', function() {
   console.log('Nice Job!!!');
 });
 
 // Timer Callback
 setTimeout(() => {
   console.log('DONE! Time to eat!');
-}, 1500);
+}, 250);
