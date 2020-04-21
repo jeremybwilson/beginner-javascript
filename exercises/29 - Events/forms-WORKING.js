@@ -1,9 +1,7 @@
 const jeremy = document.querySelector('.jeremy');
 
 jeremy.addEventListener('click', function(event) {
-  const shouldChangePage = confirm(
-    'This website could be maliscious.  Do you wish to proceed?'
-  );
+  const shouldChangePage = confirm('This website could be maliscious.  Do you wish to proceed?');
   console.log(shouldChangePage);
   // if (shouldChangePage) {
   //   window.location = event.currentTarget.href;
@@ -17,11 +15,15 @@ const signupForm = document.querySelector('[name="signup"]');
 signupForm.addEventListener('submit', function(event) {
   // console.log(event);
   const name = event.currentTarget.name.value;
+
   if (name.includes('chad')) {
     console.log('Sorry Bro');
     event.preventDefault();
   }
   // event.preventDefault();
+  console.log(event.currentTarget.name.value);
+  console.log(event.currentTarget.email.value);
+  console.log(event.currentTarget.agree.value);
 });
 
 function logEvent(event) {
@@ -46,3 +48,4 @@ function handlePhotoClick(event) {
   }
 }
 photo.addEventListener('click', handlePhotoClick);
+photo.addEventListener('keyup', handlePhotoClick);

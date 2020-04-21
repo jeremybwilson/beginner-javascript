@@ -49,7 +49,7 @@ function toggleRound() {
 }
 
 pic.addEventListener('click', toggleRound);
-pic.alt = 'Cute Pupper'; // setter
+pic.alt = 'Alternating Placeholder Image'; // setter
 pic.width = 200; // setter
 // console.log(pic.alt); // getter
 // console.log(pic.naturalWidth); // getter

@@ -1,25 +1,25 @@
-function buzzer() {
-  console.log('ENNGGGGGGG');
-}
+const buzzer = () => {
+  console.log('ENNNGGGG');
+};
 
 // console.log('Starting');
 // setTimeout(buzzer, 500);
-// console.log('finishing');
+// console.log('Finishing');
 // setInterval(buzzer, 1000);
 
-function setImmediateInterval(funcToRun, ms) {
-  // debugger;
-  // right away call that function
+const setImmediateInterval = (funcToRun, ms) => {
+  // reight away call that function
   funcToRun();
-  // run a regular interval
+  // run a regular interval;
   return setInterval(funcToRun, ms);
-}
+};
 
 setImmediateInterval(buzzer, 2000);
 
 function sayHi() {
-  console.log('Heyyy');
+  console.log('Hey');
 }
+
 // setImmediateInterval(sayHi, 200);
 
 function destroy() {
@@ -30,7 +30,7 @@ const bombTimer = setTimeout(destroy, 5000);
 
 window.addEventListener('click', function() {
   console.log('You clicked! You saved the world');
-  // ???? How do i stop
+  // ??? How do I stop the bomb timer
   clearTimeout(bombTimer); // STOP THE TIMER FROM RUNNING
 });
 

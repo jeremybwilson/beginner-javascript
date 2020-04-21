@@ -11,7 +11,7 @@ buttons.addEventListener('click', handleClick);
 // buttons.removeEventListener('click', handleClick);
 
 const hooray = () => {
-  console.log('Hooray!');
+  console.log('HOORAY!');
 };
 
 coolButton.addEventListener('click', hooray);
@@ -22,15 +22,15 @@ const buyButtons = document.querySelectorAll('button.buy');
 // function buyItem() {
 //   console.log('Buying...');
 // }
-// function handleBuyButtonClick(buyButton) {
+// function handleBuyButtonClick1(buyButton) {
 //   console.log('Binding the buy button.');
 //   buyButton.addEventListener('click', buyItem);
 // }
 // buyButtons.forEach(button => button.addEventListener('click', buyItem));
 
-function handleBuyButtonClick(event) {
+function handleBuyButtonClick2(event) {
   // console.log('Binding the buy button.');
-  console.log('You clicked a button.');
+  // console.log('You clicked a button.');
   const button = event.target;
   console.log(event.target);
   // console.log(button.textContent);
@@ -38,7 +38,6 @@ function handleBuyButtonClick(event) {
   console.log(event.target === event.currentTarget);
   // Stop this event from bubbling up
   // event.stopPropagation();
-
   // if (event.target === this) {
   //   console.log('true');
   // } else {
@@ -46,8 +45,21 @@ function handleBuyButtonClick(event) {
   // }
 }
 
+function handleBuyButtonClick3(event) {
+  console.log('You are buying it!');
+  const button = event.target;
+  // console.log(event);
+  // console.log(event.target);
+  // console.log(event.target.dataset.price);
+  console.log(event.currentTarget);
+  console.log(event.currentTarget.dataset.price);
+  console.log(event.target === event.currentTarget);
+  // stop this event from bubbling up
+  // event.stopPropagation();
+}
+
 buyButtons.forEach(function(buyButton) {
-  buyButton.addEventListener('click', handleBuyButtonClick);
+  buyButton.addEventListener('click', handleBuyButtonClick3);
 });
 
 window.addEventListener(
@@ -55,7 +67,8 @@ window.addEventListener(
   function(event) {
     console.log('YOU CLICKED THE WINDOW');
     console.log(event.target);
-    event.stopPropagation();
+    // console.log(event.target === event.currentTarget);
+    // event.stopPropagation();
   },
   { capture: true }
 );

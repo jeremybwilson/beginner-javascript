@@ -1,6 +1,6 @@
 const people = [
   { name: 'Wes', cool: true, country: 'Canada' },
-  { name: 'Jeremy', cool: true, country: 'Merica' },
+  { name: 'Jeremy', cool: true, country: 'America' },
   { name: 'Snickers', cool: false, country: 'Dog Country' },
 ];
 
@@ -57,8 +57,7 @@ function go() {
 
 const button = document.querySelector('.bigger');
 button.addEventListener('click', function(e) {
-  const newFontSize =
-    parseFloat(getComputedStyle(e.currentTarget).fontSize) + 1;
+  const newFontSize = parseFloat(getComputedStyle(e.currentTarget).fontSize) + 1;
   e.currentTarget.style.fontSize = `${newFontSize}px`;
 });
 

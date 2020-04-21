@@ -2,7 +2,24 @@
 const canvas = document.querySelector('#etch-a-sketch');
 const ctx = canvas.getContext('2d');
 const shakebutton = document.querySelector('.shake');
-const MOVE_AMOUNT = 25;
+
+const brushSizeAmount = document.querySelector('#brush').value;
+console.log(brushSizeAmount);
+
+let MOVE_AMOUNT;
+// write a function to update the brushSize
+const adjustBrushSize = e => {
+  // capture brushsize
+  // set the lineWidth to the text field value
+  // set the MOVE_AMOUNT to the text field value
+  MOVE_AMOUNT = e.target.value;
+  console.log(`Brush size updated to ${MOVE_AMOUNT}`);
+};
+
+// const MOVE_AMOUNT = 50;
+window.addEventListener('keyup', adjustBrushSize);
+// brushSizeAmount.addEventListener('keyup', adjustBrushSize);
+
 // Set up our canvas for drawing
 // make a variable called height and width from the same properties on our canvas.
 const { width, height } = canvas;
@@ -14,6 +31,7 @@ let y = Math.floor(Math.random() * height);
 ctx.lineJoin = 'round';
 ctx.lineCap = 'round';
 ctx.lineWidth = MOVE_AMOUNT;
+// ctx.lineWidth = brushSize;
 
 let hue = 0;
 ctx.strokeStyle = `hsl(${hue}, 100%, 50%)`;

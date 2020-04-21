@@ -44,3 +44,17 @@ canvas.shake {
     transform: translate3d(4px, 0, 0);
   }
 }
+label {
+  color: white;
+  background-color: brown;
+  height: 100%;
+  border-radius: 5px;
+  width: 150px;
+  padding: 1rem;
+  border: 2px solid white;
+}
+.buttons {
+  display: flex;
+  justify-content: space-evenly;
+
+}

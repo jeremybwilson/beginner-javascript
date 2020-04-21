@@ -1,16 +1,3 @@
-/*
- * empty array
- * empty object
- * 1
- * -10
- * full string
- * a string of "0"
- * 0
- * undefined variable
- * Variable set to null
- * a variable set to `"hello" - 10` NaN
- * empty string
- */
 /* eslint-disable */
     let emptyArray = [];
     let emptyObject = {};
@@ -69,17 +56,17 @@
     //   console.log('you dont have a dog');
     // }
 
-    // let score = 11;
-    // let score = -10;
-    // let score = "wes" * 100;
-    // let score = [];
-    // let score = {};
+    let score = 11;
+    let score = -10;
+    let score = "wes" * 100;
+    let score = [];
+    let score = {};
 
-    // if (score) {
-    //   console.log('There is a score already');
-    // } else {
-    //   console.log('No score yet');
-    // }
+    if (score) {
+      console.log('There is a score already');
+    } else {
+      console.log('No score yet');
+    }
 
     const values = [[], {}, -10, 1, 0, '', 'full string', ' ', undefined, NaN, null, '0️⃣', '💩'];
 
