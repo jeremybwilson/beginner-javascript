@@ -5,9 +5,14 @@ const people = [
 ];
 
 people.forEach((person, index) => {
+  // if (person.name === 'Jeremy') {
+  //   console.error('Dumb name');
+  // }
+  // debugger;
   console.log(person.name);
 });
 
+// console.table(people);
 // Console Methods
 
 // Callstack
@@ -23,6 +28,14 @@ people.forEach((person, index) => {
 // Break On Attribute
 
 // Some Setup Code
+
+function doALotOfStuff() {
+  console.group('Doing some stuff');
+  console.log('Hey Im one');
+  console.warn('watch out!');
+  console.error('hey');
+  console.groupEnd('Doing some stuff');
+}
 
 function doctorize(name) {
   return `Dr. ${name}`;
@@ -40,8 +53,7 @@ function go() {
 
 const button = document.querySelector('.bigger');
 button.addEventListener('click', function(e) {
-  const newFontSize =
-    parseFloat(getComputedStyle(e.currentTarget).fontSize) + 1;
+  const newFontSize = parseFloat(getComputedStyle(e.currentTarget).fontSize) + 1;
   e.currentTarget.style.fontSize = `${newFontSize}px`;
 });
 

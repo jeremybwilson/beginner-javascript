@@ -114,3 +114,8 @@ h6 {
   color: var(--black);
   text-shadow: none;
 }
+
+.has-error {
+  color: red;
+  border: 1px solid red;
+}
