@@ -5,6 +5,10 @@ function handleClick() {
   console.log('IT GOT CLICKED!');
 }
 
+function removeEventListenerClick() {
+  console.log(`I'm an anonymous function`);
+}
+
 buttons.addEventListener('click', handleClick);
 // coolButton.addEventListener('click', handleClick);
 
@@ -19,13 +23,23 @@ coolButton.addEventListener('click', hooray);
 // Listen on multiple items
 const buyButtons = document.querySelectorAll('button.buy');
 
-// function buyItem() {
-//   console.log('Buying...');
-// }
-// function handleBuyButtonClick1(buyButton) {
+function buyItem() {
+  console.log('Buying...');
+}
+// One method
+// buyButtons.forEach(function(buyButton) {
 //   console.log('Binding the buy button.');
 //   buyButton.addEventListener('click', buyItem);
+// });
+
+// Another method
+// function handleBuyButtonClick(anythingWeWant) {
+//   console.log('You are buying it!');
+//   anythingWeWant.addEventListener('click', buyItem);
 // }
+// buyButtons.forEach(handleBuyButtonClick);
+
+// Another method = using arrow functions
 // buyButtons.forEach(button => button.addEventListener('click', buyItem));
 
 function handleBuyButtonClick2(event) {
@@ -46,13 +60,13 @@ function handleBuyButtonClick2(event) {
 }
 
 function handleBuyButtonClick3(event) {
-  console.log('You are buying it!');
-  const button = event.target;
+  console.log('You clicked a button!');
+  // const button = event.target;
   // console.log(event);
-  // console.log(event.target);
+  console.log(event.target);
   // console.log(event.target.dataset.price);
   console.log(event.currentTarget);
-  console.log(event.currentTarget.dataset.price);
+  // console.log(event.currentTarget.dataset.price);
   console.log(event.target === event.currentTarget);
   // stop this event from bubbling up
   // event.stopPropagation();
@@ -67,15 +81,17 @@ window.addEventListener(
   function(event) {
     console.log('YOU CLICKED THE WINDOW');
     console.log(event.target);
-    // console.log(event.target === event.currentTarget);
+    // console.log(event.target === e.currentTarget);
+    console.log(event.type);
     // event.stopPropagation();
+    console.log(event.bubbles);
   },
   { capture: true }
 );
 
 const photoEl = document.querySelector('.photo');
 
-photoEl.addEventListener('mouseover', function(e) {
-  console.log(e.currentTarget);
+photoEl.addEventListener('mouseover', function(event) {
+  console.log(event.currentTarget);
   console.log(this);
 });

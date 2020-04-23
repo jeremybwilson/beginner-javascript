@@ -10,20 +10,21 @@
 
 <body>
   <div class="wrapper">
-    <a class="jeremy" href="https://jeremywilson.com">Jeremy Wilson</a>
-    <form name="signup">
+    <a class="jeremy" role="button" href="https://jeremywilson.com">Jeremy Wilson</a>
+    <form name="signup" id="signup">
       <label for="name">Name</label>
-      <input type="text" id="name" name="name" value="Jeremy Wilson">
+      <input type="text" id="name" name="name">
       <label for="email">Email</label>
-      <input type="email" id="email" name="email" value="jeremybwilson@gmail.com">
+      <input type="email" id="email" name="email">
       <input type="checkbox" id="agree" name="agree">
       <label for="agree">I agree to the terms and conditions</label>
       <hr>
-      <button type="submit">Submit</button>
+      <button type="submit" id="button-submit">Submit</button>
     </form>
   </div>
 
-  <img class="photo" src="https://picsum.photos/200" alt="Nice">
+  <div role="button" tabindex="0">ASDFASDF</div>
+  <img class="photo" tabindex="0" src="https://picsum.photos/200" alt="Nice">
 
 
   <script src="./forms-WORKING.js"></script>
