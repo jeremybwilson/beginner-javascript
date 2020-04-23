@@ -13,7 +13,7 @@ function calculateBill(billAmount, taxRate = 0.13, tipRate = 0.15) {
   clickButtonCount();
 
   // this is the function body
-  console.log('Running Calculate Bill!!');
+  console.log(`Running Calculate Bill!!`);
   const total = billAmount + billAmount * taxRate + billAmount * tipRate;
   return total;
 }
@@ -22,7 +22,7 @@ const calculateBill2 = (billAmount, taxRate = 0.13, tipRate = 0.15) => {
   clickButtonCount();
 
   // this is the function body
-  console.log('Running Calculate Bill!!');
+  console.log(`Running Calculate Bill!!`);
   const total = billAmount + billAmount * taxRate + billAmount * tipRate;
   return total;
 };
@@ -50,5 +50,6 @@ function yell(name = 'Silly Goose') {
 }
 
 const myBill = calculateBill(100, undefined, 0.2);
-
 // console.log(myBill);
+const myBill4 = calculateBill(100, 0, 0.2);
+// console.log(myBill4);

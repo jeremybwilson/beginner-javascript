@@ -1,6 +1,6 @@
 /* eslint-disable */
 // function scoped
-// var first = 'Jeremy'; // variable declaration
+var first = 'Jeremy'; // variable declaration
 
 // Scoping Fundamentals
 // Scoping in JS answers the question, "where are my variables available to me?"
@@ -10,11 +10,11 @@
 
 // what are blocked scoped variables?
 // block scoped variable examples:
-const first = 'Jeremy';
+const name = 'Jeremy';  // const stands for a constant variable
 let age = 44;
 // const age = 44;
 const cool = true;
-console.log(first); // function call statement
+console.log(name); // function call statement
 
 // cool = true;  // const variables cannot be updated
 

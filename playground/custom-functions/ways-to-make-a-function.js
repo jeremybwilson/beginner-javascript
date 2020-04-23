@@ -1,6 +1,6 @@
-function doctorize(firstName) {
-  return `Dr. ${firstName.toUpperCase()}`;
-}
+// function doctorize(firstName) {
+//   return `Dr. ${firstName.toUpperCase()}`;
+// }
 
 // Anon Function
 // function (firstName) {
@@ -8,16 +8,35 @@ function doctorize(firstName) {
 // }
 
 // Function Expression
-// const doctorize2 = function(firstName) {
-//   return `Dr. ${firstName.toUpperCase()}`;
-// };
-//
-console.log(doctorize('jeremy'));
-// console.log(doctorize2('jeremy'));
+const doctorize = function(firstName) {
+  return `Dr. ${firstName}`;
+};
+// console.log(doctorize('jeremy'));
+
+function doctorize2(firstName) {
+  return `Dr. ${firstName.toUpperCase()}`;
+}
+console.log(doctorize2('jeremy'));
 
 /* eslint-disable */
-const inchesToCM = inches => inches * 2.54;
-
+// Step 1
+// function inchesToCM(inches){
+//   const cm = inches * 2.54;
+//   return cm;
+// }
+// Step 2
+// function inchesToCM(inches){
+//   return inches * 2.54;  // just returns directly the value of inchesToCM
+// }
+// Step 3  => Anonymous func
+// const inchesToCM = function(inches){
+//   return inches * 2.54;
+// }
+// Step 4  => fat arrow function
+// const inchesToCM = (inches) => {
+//   return inches * 2.54  // explicit return
+// };
+// const inchesToCM = (inches) => inches * 2.54;  // implicit return
 const inchesToCM2 = inches => inches * 2.54;
 
 function add(a, b = 3) {
@@ -25,10 +44,10 @@ function add(a, b = 3) {
   return total;
 }
 
+// convert the above to an arrow function
 const add2 = (a, b = 3) => a + b;
 
 // returning an object
-
 function makeABaby(first, last) {
   const baby = {
     name: `${first} ${last}`,

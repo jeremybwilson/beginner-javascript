@@ -10,16 +10,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wesbos/beginner-javascript.git"
+    "url": "git+https://github.com/jeremybwilson/beginner-javascript.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/wesbos/beginner-javascript/issues"
   },
-  "homepage": "https://github.com/wesbos/beginner-javascript#readme",
+  "homepage": "https://github.com/jeremybwilson/beginner-javascript#readme",
   "devDependencies": {
     "babel-eslint": "^9.0.0",
+    "browser-sync": "^2.26.7",
     "cssnano": "^4.1.10",
     "eslint": "^5.16.0",
     "eslint-config-airbnb": "^17.1.0",

@@ -1,5 +1,5 @@
-/* esline-disable */
-let age;
+/* eslint-disable */
+var age;
 console.log(age);
 age = 10;
 
@@ -9,7 +9,12 @@ sayHi();
 /* How does this file do it? */
 function sayHi() {
   console.log('hey!');
-  console.log(add(10, 2));
+  console.log(add1(10, 2));
 }
 
-const add = (a, b) => a + b;
+function add1(a, b) {
+  return a + b;
+}
+
+// hoisting does not work with arrow functions
+const add2 = (a, b) => a + b;
