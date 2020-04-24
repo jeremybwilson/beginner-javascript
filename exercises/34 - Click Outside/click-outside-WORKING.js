@@ -16,25 +16,20 @@ const handleCardButtonClick = event => {
 
   // populate the modal with the new info
   modalInner.innerHTML = `
-      <img width="600" height="600" src="${imgSrc.replace(
-        '200',
-        '600'
-      )}" alt="${name}"/>
+      <img width="600" height="600" src="${imgSrc.replace('200', '600')}" alt="${name}"/>
       <p>${desc}</p>
   `;
   // show the modal
   modalOuter.classList.add('open');
 };
 
-cardButtons.forEach(button =>
-  button.addEventListener('click', handleCardButtonClick)
-);
+cardButtons.forEach(button => button.addEventListener('click', handleCardButtonClick));
 
 const closeModal = () => {
   modalOuter.classList.remove('open');
 };
 
-modalOuter.addEventListener('click', function(event) {
+modalOuter.addEventListener('click', event => {
   // find value for isOutside and convert to Boolean value with the !
   const isOutside = !event.target.closest('.modal-inner');
   if (isOutside) {
