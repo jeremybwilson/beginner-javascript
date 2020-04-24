@@ -1,5 +1,6 @@
-const age = 10 * 5 - 2; // 48
-const age2 = 10 * (5 - 2); // 30
+/* eslint-disable */
+const age = 10 * 5 - 2;     // 48
+const age2 = 10 * (5 - 2);  // 30
 
 function calculateBill(billAmount, taxRate = 0.13, tipRate = 0.15) {
   // this is the function body
