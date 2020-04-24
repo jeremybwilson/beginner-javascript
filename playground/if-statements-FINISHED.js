@@ -27,8 +27,8 @@ function slugify(sentence, lowercase) {
 const name = 'wes';
 const last = 'bos';
 
-if (name === 'scott' || (name === 'jeremy' && last == 'wilson')) {
-  console.log('Coool Name!');
+if (name === 'alex' || (name === 'jeremy' && last == 'wilson')) {
+  console.log('Cool Name!');
 }
 
 const isAwesomeName = 'awesome'.includes(name);
@@ -52,7 +52,11 @@ if (dog) {
   console.log('you dont have a dog');
 }
 
-const score = {};
+let score = 11;
+let score = -10;
+let score = "wes" * 100;
+let score = [];
+let score = {};
 
 if (score) {
   console.log('There is a score already');

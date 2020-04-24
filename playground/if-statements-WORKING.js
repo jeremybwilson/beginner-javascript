@@ -28,10 +28,10 @@
       return slug;
     }
 
-    const name = 'wes';
-    const last = 'bos';
+    const name = 'jeremy';
+    const last = 'wilson';
 
-    if (name === 'scott' || (name === 'jeremy' && last == 'wilson')) {
+    if (name === 'alex' || (name === 'jeremy' && last == 'wilson')) {
       console.log('Cool Name!');
     };
 
@@ -48,25 +48,26 @@
       console.log('AWESOME NAME jeremy');
     }
 
-    // const dog = '';
+    // const dog = 'chewy';
 
     // if (dog) {
-    //   console.log('you have a dog');
+    //   console.log(`You have a dog.`);
     // } else {
-    //   console.log('you dont have a dog');
+    //   console.log(`You don't have a dog.`);
     // }
 
-    let score = 11;
-    let score = -10;
-    let score = "wes" * 100;
-    let score = [];
-    let score = {};
+    // let score = 11;
+    // let score = -10;
+    // let score = "jeremy" * 100;
+    // let score = "0";
+    // let score = [];
+    // let score = {};
 
-    if (score) {
-      console.log('There is a score already');
-    } else {
-      console.log('No score yet');
-    }
+    // if (score) {
+    //   console.log('There is a score already');
+    // } else {
+    //   console.log('No score yet');
+    // }
 
     const values = [[], {}, -10, 1, 0, '', 'full string', ' ', undefined, NaN, null, '0️⃣', '💩'];
 
@@ -82,14 +83,14 @@
 
     // console.clear();
 
-    // const isCool = true;
+    const isCool = true;
 
     // if (!isCool) {
     //   console.log('You are not cool');
     // }
 
     // ternary
-    const count = 5234234;
+    // const count = 5234234;
     // let word;
     // if (count === 1) {
     //   word = 'item';
@@ -102,7 +103,7 @@
     // 3. what to do if false
     const word = count === 1 ? 'item' : 'items';
     const sentence = `You have ${count} item${count === 1 ? '' : 's'} in your cart`;
-    // console.log(sentence);
+    console.log(sentence);
 
     function showAdminBar() {
       console.log('Showing admin bar');

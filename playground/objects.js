@@ -19,7 +19,7 @@ const jeremy = {
 jeremy.job = 'Web Developer';
 jeremy.age = 50;
 
-console.log(jeremy.age);
+// console.log(jeremy.age);
 // const properyToCheck = prompt('What do you want to check?');
 // console.log(properyToCheck);
 // console.log(jeremy[properyToCheck]);
@@ -37,14 +37,14 @@ console.log(name);
 let name1 = 'jeremy';
 let name2 = 'jeremy';
 
-// console.log(name1 === name2);
-name1 = 'scott';
+console.log(name1 === name2);
+// name1 = 'scott';
 // console.log(name1 === name2);
 // update name1 to be what is name2
-name1 = name2;
+// name1 = name2;
 // console.log(name1 === name2);
-name2 = name1;
-name2 = 'westopher';
+// name2 = name1;
+// name2 = 'westopher';
 
 const person1 = {
   first: 'jeremy',
@@ -63,7 +63,7 @@ const person2 = {
 // person3.first = 'Larry';
 // console.log(person3.first);
 // console.log(person1.first);
-const person3 = { ...person1 };
+const person3 = { ...person1 };  // copies but only one level deep
 // const person3 = Object.assign({}, person1);
 
 // this example employs Lodash (see underscore)
