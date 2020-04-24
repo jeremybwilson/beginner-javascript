@@ -20,27 +20,3 @@ function makePizza(toppings = []) {
     // if something went wrong, we can reject this promise;
   });
 }
-
-function handleError(err) {
-  console.log('ohhh noooo');
-  console.log(err);
-}
-
-function handleDisgustingPizza() { }
-async function go() {
-  const pizza = await makePizza(['pineapple']).catch(handleDisgustingPizza);
-  return pizza;
-}
-
-// catch it at run time
-go().catch(handleError);
-// make a safe function with a HOF
-function makeSafe(fn, errorHandler) {
-  return function () {
-    fn().catch(errorHandler);
-  };
-}
-
-const safeGo = makeSafe(go, handleError);
-
-safeGo();

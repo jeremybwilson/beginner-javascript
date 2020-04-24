@@ -21,26 +21,83 @@ function makePizza(toppings = []) {
   });
 }
 
-function handleError(err) {
-  console.log('ohhh noooo');
-  console.log(err);
+
+function handleError(err){
+  console.log(`.:: DEBUG ::. Error:`, err);
 }
 
-function handleDisgustingPizza() { }
-async function go() {
+// Example 4
+async function goGo(){
+  const result = await go();
+}
+
+// Example 3
+async function go(){
+  const pizza = await makePizza(['pineapple']);
+  console.log(pizza);
+  // return the pizza but async function will still return a promise for pizza constant
+  return pizza;
+}
+
+// Example 2
+async function go2(){
+  const pizza = await makePizza(['pineapple']).catch(handleError);
+  console.log(pizza);
+  // return the pizza but async function will still return a promise for pizza constant
+  return pizza;
+}
+
+// Example 1
+// async function go(){
+//   try {
+//     const pizza = await makePizza(['pineapple']);
+//     console.log(pizza);
+//   } catch(err) {
+//     handleError(err);
+//     // console.log(err);
+//   }
+// }
+
+// Example 4
+// goGo().catch(handleError);
+
+// Example 3
+go().catch(handleError);
+
+// or you can also await the async function using .then()
+go().then(result => {
+  console.log(result);
+}).catch(handleError);
+
+// Example 2
+// const result = go().catch(handleError);
+// go2();
+
+// Example 1
+// catch it at run time
+go().catch(handleError);
+
+// Fun handle error example
+function handleDisgustingPizza() {
+  console.log(`This is a digusting pizza.`);
+}
+
+async function go3() {
   const pizza = await makePizza(['pineapple']).catch(handleDisgustingPizza);
   return pizza;
 }
 
-// catch it at run time
-go().catch(handleError);
+go3().catch(handleError);
+
 // make a safe function with a HOF
 function makeSafe(fn, errorHandler) {
   return function () {
-    fn().catch(errorHandler);
-  };
+    fn().catch(errorHandler)
+  }
 }
 
 const safeGo = makeSafe(go, handleError);
 
 safeGo();
+
+
