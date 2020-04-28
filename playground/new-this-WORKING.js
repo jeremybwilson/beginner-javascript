@@ -1,10 +1,10 @@
 /* eslint-disable */
-const myDate = new Date('August 11, 2025');
+const myDate = new Date('June 26, 2021');
 console.dir(myDate);
 console.log(myDate.getFullYear());
 
-const names = new Array('wes', 'kait');
-const wes = new Object({ name: 'wes' });
+const names = new Array('Jeremy', 'Alex', 'Anika');
+const jeremy = new Object({ name: 'Jeremy' });
 const span = document.createElement('span');
 
 String.prototype.sarcastic = function () {
@@ -49,12 +49,16 @@ Pizza.prototype.describe = function () {
   return `This pizza is for ${this.customer} with the toppings ${this.toppings.join(',')} and there are ${this.slices} left!`;
 }
 
-const pepperoniPizza = new Pizza(['pepperoni'], 'Wes Bos');
-const canadianPizza = new Pizza(['pepperoni', 'mushrooms', 'onion'], 'Kait Bos');
+// const pepperoniPizza = new Pizza();
+// console.log(pepperoniPizza);
+// console.log(pepperoniPizza.constructor);
+// console.log(pepperoniPizza instanceof Pizza);
 
+const pepperoniPizza = new Pizza(['pepperoni'], 'Alex Wilson');
+const canadianPizza = new Pizza(['pepperoni', 'mushrooms', 'onion'], 'Anika Wilson');
 
-const button1 = document.querySelector('.one');
-const button2 = document.querySelector('.two');
+// const button1 = document.querySelector('.one');
+// const button2 = document.querySelector('.two');
 
 function tellMeAboutTheButton() {
   console.log('outside', this);
@@ -64,8 +68,8 @@ function tellMeAboutTheButton() {
   }, 1000);
 }
 
-button1.addEventListener('click', tellMeAboutTheButton);
-button2.addEventListener('click', tellMeAboutTheButton);
+// button1.addEventListener('click', tellMeAboutTheButton);
+// button2.addEventListener('click', tellMeAboutTheButton);
 
 
 
