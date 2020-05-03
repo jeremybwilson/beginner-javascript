@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <title>Promises</title>
-  <link rel="stylesheet" href="../base.css">
+  <link rel="stylesheet" href="../../base.css">
 </head>
 
 <body>
@@ -16,7 +16,7 @@
         if (toppings.includes('pineapple')) {
           reject('Seriously? Get out 🍍');
         }
-        const amountOfTimeToBake = 500 + (toppings.length * 200);
+        const amountOfTimeToBake = 500 + toppings.length * 200;
         // wait 1 second for the pizza to cook:
         setTimeout(function () {
           // when you are ready, you can resolve this promise
@@ -43,11 +43,12 @@
       .then(function (pizza) {
         console.log(pizza);
         return makePizza(['one', 'two', 'three', 'four', 'one', 'two', 'three', 'four', 'one', 'two', 'three', 'four']);
-      }).then(pizza => {
+      })
+      .then(pizza => {
         console.log('All done! here is your last pizza');
         console.log(pizza);
       })
-      .catch(handleError)
+      .catch(handleError);
 
     // console.log('Right after');
 
@@ -77,8 +78,8 @@
     makePizza(['cheese', 'pineapple'])
       .then(pizza => {
         console.log(pizza);
-      }).catch(handleError)
-
+      })
+      .catch(handleError);
 
     const p1 = makePizza(['pep']);
     const p2 = makePizza(['pineapple']);
@@ -87,7 +88,7 @@
 
     dinnerPromise2.then(results => {
       console.log(results);
-    })
+    });
   </script>
 </body>
 

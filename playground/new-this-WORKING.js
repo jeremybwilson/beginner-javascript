@@ -10,14 +10,14 @@ const span = document.createElement('span');
 String.prototype.sarcastic = function () {
   // make sarcastic
   return [...this].map((char, i) => char[`to${i % 2 ? 'Upper' : 'Lower'}Case`]()).join('');
-  const sarcastic = this.split('').map((char, i) => {
-    if (i % 2) {
-      return char.toUpperCase();
-    } else {
-      return char.toLowerCase();
-    }
-  }).join('');
-  return sarcastic;
+  // const sarcastic = this.split('').map((char, i) => {
+  //   if (i % 2) {
+  //     return char.toUpperCase();
+  //   } else {
+  //     return char.toLowerCase();
+  //   }
+  // }).join('');
+  // return sarcastic;
 }
 function Pizza(toppings = [], customer) {
   console.log('Making a pizza');
@@ -26,6 +26,7 @@ function Pizza(toppings = [], customer) {
   this.customer = customer;
   this.id = Math.floor(Math.random() * 16777215).toString(16);
   this.slices = 10;
+
   // this.eat = function () {
   //   if (this.slices > 0) {
   //     this.slices = this.slices - 1;
@@ -36,13 +37,20 @@ function Pizza(toppings = [], customer) {
   // }
 }
 
-Pizza.prototype.eat = function () {
-  if (this.slices > 0) {
-    this.slices = this.slices - 1;
-    console.log(`CHOMP you now have ${this.slices} left!`);
-  } else {
-    console.log(`Sorry! No slices left!`);
+Pizza.prototype.eat = function(){
+  this.eat = function () {
+    if (this.slices > 0) {
+      this.slices = this.slices - 1;
+      console.log(`CHOMP you now have ${this.slices} left!`);
+    } else {
+      console.log(`Sorry! No slices left!`);
+    }
   }
+}
+
+// extra practice
+Pizza.prototype.describe2 = function () {
+  return `This pizza is for ${this.customer} with the toppings ${this.toppings.join(',')} and there are ${this.slices} left!`;
 }
 
 Pizza.prototype.describe = function () {
