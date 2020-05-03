@@ -1,11 +1,21 @@
-function Slider(slider) {
+/* eslint-disable */
+function Slider(slider){
   if (!(slider instanceof Element)) {
     throw new Error('No slider passed in');
   }
+  // create some variables for working with the slider
+  // let prev;
+  // let current;
+  // let next;
+  // variable declarations now not needed with this.
+  this.prev;
+  this.current;
+  this.next;
 
   // select the elements needed for the slider
   this.slides = slider.querySelector('.slides');
   this.slider = slider;
+
   const prevButton = slider.querySelector('.goToPrev');
   const nextButton = slider.querySelector('.goToNext');
 
@@ -14,16 +24,19 @@ function Slider(slider) {
   this.applyClasses();
 
   // Event listeners
-  prevButton.addEventListener('click', () => this.move('back'));
+  // this.move = this.move.bind(this);
+  // nextButton.addEventListener('click', this.move);
+  // the above works for the nextButton but we will use the arrow function () => this.move()
   nextButton.addEventListener('click', () => this.move());
+  prevButton.addEventListener('click', () => this.move('back'));
 }
 
 Slider.prototype.startSlider = function() {
-  this.current =
-    this.slider.querySelector('.current') || this.slides.firstElementChild;
-  this.prev =
-    this.current.previousElementSibling || this.slides.lastElementChild;
+  // update the current, prev, and next variables
+  this.current = this.slider.querySelector('.current') || this.slides.firstElementChild;
+  this.prev = this.current.previousElementSibling || this.slides.lastElementChild;
   this.next = this.current.nextElementSibling || this.slides.firstElementChild;
+  // console.log({ this.current, this.prev, this.next });
 };
 
 Slider.prototype.applyClasses = function() {
@@ -34,6 +47,7 @@ Slider.prototype.applyClasses = function() {
 
 Slider.prototype.move = function(direction) {
   // first strip all the classes off the current slides
+  // make an array of classes to remove
   const classesToRemove = ['prev', 'current', 'next'];
   this.prev.classList.remove(...classesToRemove);
   this.current.classList.remove(...classesToRemove);
@@ -47,6 +61,7 @@ Slider.prototype.move = function(direction) {
       this.current,
     ];
   } else {
+    // [prev, current, next] = [current, next, next.nextElementSibling];
     [this.prev, this.current, this.next] = [
       this.current,
       this.next,
@@ -62,14 +77,3 @@ const mySlider = new Slider(document.querySelector('.slider'));
 const dogSlider = new Slider(document.querySelector('.dog-slider'));
 
 console.log(mySlider, dogSlider);
-
-window.dogSlider = dogSlider;
-
-window.addEventListener('keyup', function(e) {
-  if (e.key === 'ArrowRight') {
-    dogSlider.move();
-  }
-  if (e.key === 'ArrowLeft') {
-    dogSlider.move('back');
-  }
-});

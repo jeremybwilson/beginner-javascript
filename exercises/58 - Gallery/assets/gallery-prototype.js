@@ -3,10 +3,14 @@
 // Challenge: add close button
 
 /* eslint-disable */
+
 function Gallery(gallery) {
   if (!gallery) {
     throw new Error('No Gallery Found!');
+    // can comment out the throw new Error() code to gracefully degrade/return/exit the error block
+    //  return;
   }
+
   this.gallery = gallery;
   // select the elements we need
   this.images = Array.from(gallery.querySelectorAll('img'));
@@ -21,18 +25,20 @@ function Gallery(gallery) {
   this.handleClickOutside = this.handleClickOutside.bind(this);
 
   // These are our Event Listeners!
-  this.images.forEach(image => image.addEventListener('click', e => this.showImage(e.currentTarget)));
-
+  // this.images.forEach(image => image.addEventListener('click', e => this.showImage(e.currentTarget)));
+  this.images.forEach(image =>
+    image.addEventListener('click', e => this.showImage(e.currentTarget))
+  );
   // loop over each image
   this.images.forEach(image => {
     // attach an event listener for each image
     image.addEventListener('keyup', e => {
       // when that is keyup'd, check if it was enter
-      if (e.key === 'Enter') {
+      if (e.key === 'Enter'){
         // if it was, show that image
         this.showImage(e.currentTarget);
       }
-    });
+    })
   });
 
   this.modal.addEventListener('click', this.handleClickOutside);
@@ -40,9 +46,10 @@ function Gallery(gallery) {
 
 Gallery.prototype.openModal = function() {
   console.info('Opening Modal...');
+
   // First check if the modal is already open
   if (this.modal.matches('.open')) {
-    console.info('Madal already open');
+    console.info('Modal already open');
     return; // stop the function from running
   }
   this.modal.classList.add('open');
@@ -51,38 +58,51 @@ Gallery.prototype.openModal = function() {
   window.addEventListener('keyup', this.handleKeyUp);
   this.nextButton.addEventListener('click', this.showNextImage);
   this.prevButton.addEventListener('click', this.showPrevImage);
-};
+}
 
 Gallery.prototype.closeModal = function() {
+  console.info('Closing Modal...');
   this.modal.classList.remove('open');
+
   // TODO: add event listeners for clicks and keyboard..
   window.removeEventListener('keyup', this.handleKeyUp);
   this.nextButton.removeEventListener('click', this.showNextImage);
   this.prevButton.removeEventListener('click', this.showPrevImage);
-};
+}
 
 Gallery.prototype.handleClickOutside = function(e) {
-  if (e.target === e.currentTarget) {
+  // showImage(event.currentTarget);
+  if (e.target === e.currentTarget){
     this.closeModal();
   }
-};
+}
+// Gallery.prototype.handleClickOutside = function(e) {
+//   if (e.target === e.currentTarget) {
+//     this.closeModal();
+//   }
+// };
 
 Gallery.prototype.handleKeyUp = function(event) {
   if (event.key === 'Escape') return this.closeModal();
   if (event.key === 'ArrowRight') return this.showNextImage();
   if (event.key === 'ArrowLeft') return this.showPrevImage();
-};
+}
 
 Gallery.prototype.showNextImage = function() {
   console.log('SHOWING NEXT IMAGE!!!');
-  this.showImage(this.currentImage.nextElementSibling || this.gallery.firstElementChild);
-};
+  this.showImage(
+    this.currentImage.nextElementSibling || this.gallery.firstElementChild
+    );
+}
+
 Gallery.prototype.showPrevImage = function() {
-  this.showImage(this.currentImage.previousElementSibling || this.gallery.lastElementChild);
-};
+  this.showImage(
+    this.currentImage.previousElementSibling || this.gallery.lastElementChild
+    );
+}
 
 Gallery.prototype.showImage = function(el) {
-  if (!el) {
+  if (!el){
     console.info('no image to show');
     return;
   }
@@ -93,11 +113,11 @@ Gallery.prototype.showImage = function(el) {
   this.modal.querySelector('figure p').textContent = el.dataset.description;
   this.currentImage = el;
   this.openModal();
-};
+}
 
 // Use it on the page
 
 const gallery1 = new Gallery(document.querySelector('.gallery1'));
 const gallery2 = new Gallery(document.querySelector('.gallery2'));
 
-console.log(gallery1, gallery2);
+// console.log(gallery1, gallery2);
