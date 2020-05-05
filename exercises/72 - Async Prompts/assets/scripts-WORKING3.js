@@ -5,7 +5,7 @@ function wait(ms = 0) {
 async function destroyPopup(popup) {
   popup.classList.remove('open');
   await wait(1000);
-  // remove the popup entirely!
+  // remove the popup entirely
   popup.remove();
   /* eslint-disable no-param-reassign */
   popup = null;
@@ -20,13 +20,13 @@ function ask(options) {
     popup.insertAdjacentHTML(
       'afterbegin',
       `<fieldset>
-        <label for="">${options.title}</label>
+        <label>${options.title}</label>
         <input type="text" name="input" />
         <button type="submit">Submit</button>
       </fieldset>
       `
     );
-    console.log(popup);
+    // console.log(popup);
     // check if they want a cancel button
     if (options.cancel) {
       const skipButton = document.createElement('button');
@@ -49,10 +49,11 @@ function ask(options) {
       'submit',
       function(event) {
         event.preventDefault();
-        console.log(`Submitted`);
+        console.log(`SUBMITTED!`);
         resolve(event.target.input.value);
         // remove it from the DOM entirely
         destroyPopup(popup);
+        // REMOVE THE EVENT LISTENER FOR SUBMITTED => instead, we'll pass the optional argument
       },
       { once: true }
     );
@@ -68,6 +69,7 @@ function ask(options) {
   });
 }
 
+// select all button that have a question
 async function askQuestion(event) {
   // console.log(event);
   const button = event.currentTarget;
@@ -93,6 +95,13 @@ const questions = [
   { title: 'What is your dogs name?' },
 ];
 
+// this does NOT work
+// questions.forEach(async function(question){
+//   console.log('Asking a question');
+//   console.log(question);
+//   const answer = await ask(question);
+// });
+
 async function asyncMap(array, callback) {
   // make an array to store our results
   const results = [];
@@ -105,12 +114,7 @@ async function asyncMap(array, callback) {
   return results;
 }
 
-async function go() {
-  const answers = await asyncMap(questions, ask);
-  console.log(answers);
-}
-go();
-
+// get rid of this and use the go() async function below
 // async function askMany() {
 //   for (question of questions) {
 //     const answer = await ask(question);
@@ -118,3 +122,9 @@ go();
 //   }
 // }
 // askMany();
+
+async function go() {
+  const answers = await asyncMap(questions, ask);
+  console.log(answers);
+}
+go();
