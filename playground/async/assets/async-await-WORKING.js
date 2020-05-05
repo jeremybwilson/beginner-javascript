@@ -17,32 +17,25 @@ go();
 function makePizza(toppings = []) {
   return new Promise(function(resolve, reject) {
     // reject if people try with pineapple
-    // if (toppings.includes('pineapple')) {
-    //   reject('Seriously? Get out 🍍');
-    // }
-    // const amountOfTimeToBake = 500 + toppings.length * 200;
+    if (toppings.includes('pineapple')) {
+      reject('Seriously? Get out 🍍');
+    }
+    const amountOfTimeToBake = 500 + toppings.length * 200;
     // wait 1 second for the pizza to cook:
-    // setTimeout(function() {
-    // when you are ready, you can resolve this promise
-    // resolve(`Here is your pizza 🍕 with the toppings ${toppings.join(' ')}`);
-    // }, amountOfTimeToBake);
+    setTimeout(function() {
+      // when you are ready, you can resolve this promise
+      resolve(`Here is your pizza 🍕 with the toppings ${toppings.join(' ')}`);
+    }, amountOfTimeToBake);
     // if something went wrong, we can reject this promise;
   });
 }
 
-// async function go() {
-//   console.log('Starting');
-//   await wait(2000);
-//   console.log('running');
-//   await wait(200);
-//   console.log('ending');
-// }
-
-// go();
-
 async function makeDinner() {
+  // if want the actual data that comes back from a promise, you must 'await' the function
   // const pizza1 = await makePizza(['pepperoni']);
+  // console.log(pizza1);
   // const pizza2 = await makePizza(['mushrooms']);
+  // console.log(pizza2);
 
   const pizzaPromise1 = makePizza(['pepperoni']);
   const pizzaPromise2 = makePizza(['mushrooms']);
@@ -53,20 +46,20 @@ async function makeDinner() {
 makeDinner();
 
 // Function declaration
-async function fd() {}
+// async function fd() {}
 
 // arrow function
-const arrowFn = async () => {};
+// const arrowFn = async () => {};
 
 // call back
-window.addEventListener('click', async function() {});
+// window.addEventListener('click', async function() {});
 
-//
-const person = {
-  // method
-  async sayHi() {},
-  // method shorthand
-  async sayHello() {},
-  // function property
-  sayHey: async () => {},
-};
+// //
+// const person = {
+//   // method
+//   async sayHi() {},
+//   // method shorthand
+//   async sayHello() {},
+//   // function property
+//   sayHey: async () => {},
+// };
