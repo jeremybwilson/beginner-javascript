@@ -1,3 +1,4 @@
+/* eslint-disable */
 const jokeButton = document.querySelector('.getJoke');
 const jokeButtonSpan = jokeButton.querySelector('.jokeText');
 const jokeHolder = document.querySelector('.joke p');
@@ -22,6 +23,7 @@ async function fetchJoke() {
       Accept: 'application/json',
     },
   });
+
   const data = await response.json();
   // turn the loader off
   loader.classList.add('hidden');
@@ -32,6 +34,7 @@ function randomItemFromArray(arr, not) {
   const item = arr[Math.floor(Math.random() * arr.length)];
   if (item === not) {
     console.log('Ahh we used that one last time, look again');
+    // console.log(not);
     return randomItemFromArray(arr, not);
   }
   return item;
@@ -39,11 +42,9 @@ function randomItemFromArray(arr, not) {
 
 async function handleClick() {
   const { joke } = await fetchJoke();
+  // console.log(joke);
   jokeHolder.textContent = joke;
-  jokeButtonSpan.textContent = randomItemFromArray(
-    buttonText,
-    jokeButtonSpan.textContent
-  );
+  jokeButtonSpan.textContent = randomItemFromArray(buttonText, jokeButtonSpan.textContent);
 }
 
 jokeButton.addEventListener('click', handleClick);

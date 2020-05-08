@@ -7,7 +7,6 @@ export async function fetchJoke(loader) {
       Accept: 'application/json',
     },
   });
-
   const data = await response.json();
   // turn the loader off
   loader.classList.add('hidden');
