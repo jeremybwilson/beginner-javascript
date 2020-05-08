@@ -1,5 +1,7 @@
 /* eslint-disable */
-const wait = (ms = 0) => new Promise(resolve => setTimeout(resolve, ms));
+import wait from 'waait';
+
+// const wait = (ms = 0) => new Promise(resolve => setTimeout(resolve, ms));
 
 // function wait(ms = 0) {
 //   return new Promise(function(resolve, reject){
