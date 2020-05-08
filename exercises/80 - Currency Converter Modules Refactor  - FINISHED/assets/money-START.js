@@ -42,9 +42,11 @@ const currencies = {
 };
 
 function generateOptions(options) {
+  // console.log(options);
   return Object.entries(options)
     .map(
       ([currencyCode, currencyName]) =>
+        // console.log(currencyCode, currencyName);
         `<option value="${currencyCode}">${currencyCode} - ${currencyName}</option>`
     )
     .join('');
@@ -59,15 +61,13 @@ async function fetchRates(base = 'USD') {
 async function convert(amount, from, to) {
   // first check if we even have the rates to convert from that currency
   if (!ratesByBase[from]) {
-    console.log(
-      `Oh no, we dont have ${from} to convert to ${to}. So gets go get it!`
-    );
+    console.log(`Oh no, we don have ${from} to convert ${to}.  So let's go get it.`);
     const rates = await fetchRates(from);
     console.log(rates);
-    // store them for next time
+    // store them for the next time
     ratesByBase[from] = rates;
   }
-  // convert that amount that they passed it
+  // convert the amount that we passed through
   const rate = ratesByBase[from].rates[to];
   const convertedAmount = rate * amount;
   console.log(`${amount} ${from} is ${convertedAmount} in ${to}`);
@@ -80,16 +80,14 @@ function formatCurrency(amount, currency) {
     currency,
   }).format(amount);
 }
+
 async function handleInput(e) {
-  const rawAmount = await convert(
-    fromInput.value,
-    fromSelect.value,
-    toSelect.value
-  );
+  const rawAmount = await convert(fromInput.value, fromSelect.value, toSelect.value);
   toEl.textContent = formatCurrency(rawAmount, toSelect.value);
 }
 
 const optionsHTML = generateOptions(currencies);
+// console.log(optionsHTML);
 // populate the options elements
 fromSelect.innerHTML = optionsHTML;
 toSelect.innerHTML = optionsHTML;

@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { convert } from './lib.js';
 import { formatCurrency } from './utils.js';
 import { fromInput, fromSelect, toSelect, toEl } from './elements.js';
